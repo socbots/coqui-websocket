@@ -14,3 +14,15 @@ Listens on port 4000.
 ```
 node server.js
 ```
+
+## Configuring the WebSocket handshake
+It is recommended to use a reverse proxy to handle the traffic encryption, such as nginx, or in our production usecase, Rahti.
+
+
+In addition to normal SSL and reverse proxy configuration, there needs to be additional headers
+to process the WebSocket connection upgrade from http to wss.
+Otherwise, the connection may work but all requests will be sent as GET and POST over regular HTTP.
+
+[Howto with Nginx](https://www.nginx.com/blog/websocket-nginx/)
+
+Rahti to be seen...

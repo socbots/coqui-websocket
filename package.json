@@ -1,0 +1,25 @@
+{
+  "name": "coqui-websocket",
+  "version": "0.1.0",
+  "description": "Coqui STT websocket backend for livestreaming transcriptions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/socbots/coqui-websocket.git"
+  },
+  "author": "the robodevs",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/socbots/coqui-websocket/issues"
+  },
+  "homepage": "https://github.com/socbots/coqui-websocket#readme",
+  "dependencies": {
+    "stt": "^1.3.0",
+    "defaults": "^1.0.3",
+    "node-vad": "^1.1.4",
+    "socket.io": "^4.4.1"
+  }
+}

@@ -3,6 +3,8 @@
 
 public/*.zip
 .directory
+coqui-stt-models/*
+
 
 # Logs
 logs

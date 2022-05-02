@@ -9,12 +9,10 @@ const { Server } = require("socket.io");
 const STT = require('stt');
 const VAD = require('node-vad');
 
-let STT_MODEL = __dirname + '/coqui-stt-models'; // path to stt english model directory
-
+let STT_MODEL = process.env.models_dir || __dirname + '/coqui-stt-models'; // path to stt english model directory
 let SILENCE_THRESHOLD = 200; // how many milliseconds of inactivity before processing the audio
 
-const SERVER_PORT = 4000; // websocket server port
-
+const SERVER_PORT = process.env.websocket_port || 4000; // websocket server port
 // const VAD_MODE = VAD.Mode.NORMAL;
 // const VAD_MODE = VAD.Mode.LOW_BITRATE;
 // const VAD_MODE = VAD.Mode.AGGRESSIVE;

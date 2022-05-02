@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "yum install bzip2-devel && ln -s `find /usr/lib64/ -type f -name \"libbz2.so.1*\"` /usr/lib64/libbz2.so.1.0"
+    "postinstall": "sudo yum install -y bzip2-devel && sudo ln -s `find /usr/lib64/ -type f -name \"libbz2.so.1*\"` /usr/lib64/libbz2.so.1.0"
   },
   "repository": {
     "type": "git",

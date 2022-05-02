@@ -4,8 +4,7 @@
   "description": "Coqui STT websocket backend for livestreaming transcriptions",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "postinstall": "sudo yum install -y bzip2-devel && sudo ln -s `find /usr/lib64/ -type f -name \"libbz2.so.1*\"` /usr/lib64/libbz2.so.1.0"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

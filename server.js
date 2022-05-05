@@ -13,6 +13,7 @@ let STT_MODEL = process.env.models_dir || __dirname + '/coqui-stt-models'; // pa
 let SILENCE_THRESHOLD = 200; // how many milliseconds of inactivity before processing the audio
 
 const SERVER_PORT = process.env.websocket_port || 4000; // websocket server port
+const HOST = '0.0.0.0';
 // const VAD_MODE = VAD.Mode.NORMAL;
 // const VAD_MODE = VAD.Mode.LOW_BITRATE;
 // const VAD_MODE = VAD.Mode.AGGRESSIVE;
@@ -37,6 +38,7 @@ const app = http.createServer(function (req, res) {
 		'Access-Control-Max-Age': 2592000, // 30 days
 	};
 	res.writeHead(200, headers);
+	console.log("Got request:", req.headers.host);
 	res.write('web-microphone-websocket');
 	res.end();
 });
@@ -234,8 +236,8 @@ io.on('connection', function (socket) {
 	});
 });
 
-app.listen(SERVER_PORT, 'localhost', () => {
-	console.log('Socket server listening on:', SERVER_PORT);
+app.listen(SERVER_PORT, HOST, () => {
+	console.log(`Socket server listening on ${HOST}:${SERVER_PORT}`);
 });
 
 module.exports = app;
